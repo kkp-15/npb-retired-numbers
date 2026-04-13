@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="プロ野球の永久欠番クイズ！巨人・阪神・広島など全12球団の永久欠番18個を出題。王貞治、長嶋茂雄、衣笠祥雄、沢村栄治…あなたは何問正解できる？">
+<link rel="canonical" href="https://retired.kkpwebninja.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="プロ野球 永久欠番クイズ｜全12球団の伝説を知ってる？">
+<meta property="og:description" content="プロ野球の永久欠番クイズ！全12球団の永久欠番18個を出題。王貞治、長嶋茂雄、衣笠祥雄…あなたは何問正解できる？">
+<meta property="og:url" content="https://retired.kkpwebninja.com">
+<meta property="og:site_name" content="web忍者の砦">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="プロ野球 永久欠番クイズ｜全12球団の伝説を知ってる？">
+<meta name="twitter:description" content="プロ野球の永久欠番クイズ！全12球団の永久欠番18個を出題。あなたは何問正解できる？">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+<link rel="apple-touch-icon" href="https://npb2026q.kkpwebninja.com/ogp.png">
+
+<title>プロ野球 永久欠番クイズ｜NPB全12球団の伝説18番号に挑戦【無料】</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "プロ野球 永久欠番クイズ",
+  "url": "https://retired.kkpwebninja.com",
+  "description": "プロ野球全12球団の永久欠番18個をクイズ形式で出題。王貞治、長嶋茂雄、沢村栄治など伝説の選手を当てよう。",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "author": { "@type": "Organization", "name": "web忍者の砦", "url": "https://kkpwebninja.com" }
+}
+</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2LM85GJN0L"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2LM85GJN0L');
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(170deg, #0a0a1a 0%, #1a1028 30%, #0d1b2a 60%, #0a0a1a 100%);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    text-align: center;
+    padding: 48px 20px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 50% 120%, rgba(218,165,32,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,215,0,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 20% 80%, rgba(192,57,43,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(218,165,32,0.15), rgba(218,165,32,0.08));
+    border: 1px solid rgba(218,165,32,0.35);
+    color: rgba(255,215,0,0.9);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(218,165,32,0.15);
+  }
+
+  .hero h1 {
+    font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+    font-size: clamp(28px, 7vw, 48px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .hero h1 .gold {
+    background: linear-gradient(135deg, #FFD700, #DAA520, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 14px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  /* ===== STATS ===== */
+  .stats-bar {
+    max-width: 500px;
+    margin: 16px auto 28px;
+    padding: 0 16px;
+  }
+  .stats-inner {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 14px 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFD700;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* ===== MAIN ===== */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+  }
+
+  /* ===== QUIZ SCREENS ===== */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* ===== MODE SELECT ===== */
+  .mode-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .mode-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #FFD700;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .mode-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .mode-btn {
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: 2px solid rgba(218,165,32,0.3);
+    background: rgba(218,165,32,0.1);
+    color: #FFD700;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .mode-btn:hover, .mode-btn.active {
+    background: linear-gradient(135deg, #DAA520, #B8860B);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(218,165,32,0.3);
+    transform: translateY(-2px);
+  }
+  .start-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #DAA520, #B8860B);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(218,165,32,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(218,165,32,0.4);
+  }
+
+  /* ===== QUIZ ===== */
+  .quiz-progress {
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .quiz-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .quiz-team {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .quiz-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(56px, 15vw, 80px);
+    font-weight: 700;
+    color: #FFD700;
+    text-shadow: 0 4px 20px rgba(218,165,32,0.3);
+    margin: 8px 0 6px;
+    line-height: 1;
+  }
+  .quiz-hint {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .quiz-choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .choice-btn {
+    padding: 14px 12px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .choice-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-1px);
+  }
+  .choice-btn.correct {
+    background: rgba(46,204,113,0.2);
+    border-color: #2ecc71;
+    color: #2ecc71;
+  }
+  .choice-btn.wrong {
+    background: rgba(231,76,60,0.2);
+    border-color: #e74c3c;
+    color: #e74c3c;
+  }
+  .choice-btn:disabled { cursor: default; }
+
+  .quiz-feedback {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    display: none;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct-fb {
+    background: rgba(46,204,113,0.1);
+    border: 1px solid rgba(46,204,113,0.2);
+    color: rgba(255,255,255,0.8);
+  }
+  .quiz-feedback.wrong-fb {
+    background: rgba(231,76,60,0.1);
+    border: 1px solid rgba(231,76,60,0.2);
+    color: rgba(255,255,255,0.8);
+  }
+  .next-btn {
+    display: none;
+    margin: 16px auto 0;
+    padding: 12px 32px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .next-btn:hover { background: rgba(255,255,255,0.15); }
+
+  /* ===== RESULT ===== */
+  .result-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .result-trophy { font-size: 56px; margin-bottom: 12px; }
+  .result-score {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #FFD700;
+  }
+  .result-total { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .result-msg { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 20px; line-height: 1.5; }
+  .result-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .result-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .result-btn:hover { transform: translateY(-2px); }
+  .result-btn.primary {
+    background: linear-gradient(135deg, #DAA520, #B8860B);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(218,165,32,0.3);
+  }
+  .result-btn.secondary {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+
+  /* ===== ROSTER TABLE ===== */
+  .roster-section {
+    margin-top: 48px;
+    padding: 28px 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .roster-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .roster-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .roster-table th {
+    padding: 10px 8px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 1px;
+  }
+  .roster-table td {
+    padding: 12px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.8);
+  }
+  .roster-table .num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFD700;
+    width: 40px;
+  }
+  .roster-table .team { color: rgba(255,255,255,0.5); font-size: 12px; }
+  .roster-table .episode { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.4; margin-top: 2px; }
+
+  /* ===== AFFILIATE ===== */
+  .watch-section {
+    margin-top: 40px;
+    padding: 24px 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+    text-align: center;
+  }
+  .watch-section p { font-size: 14px; font-weight: 900; color: #fff; margin-bottom: 14px; }
+  .watch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 480px) { .watch-grid { grid-template-columns: 1fr; } }
+  .watch-card {
+    display: block;
+    padding: 16px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.25s;
+  }
+  .watch-card:hover { transform: translateY(-3px); }
+  .watch-card.skapa { background: linear-gradient(135deg, #e60012, #c70010); box-shadow: 0 4px 16px rgba(230,0,18,0.3); }
+  .watch-card.dazn { background: linear-gradient(135deg, #f8a100, #e89000); color: #1a1a1a; box-shadow: 0 4px 16px rgba(248,161,0,0.3); }
+  .watch-card span { display: block; font-size: 11px; font-weight: 400; opacity: 0.8; margin-top: 3px; }
+  .watch-note { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+
+  /* ===== SEO TEXT ===== */
+  .seo-section {
+    margin-top: 40px;
+    padding: 24px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+  }
+  .seo-section h2 { font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+  .seo-section p { font-size: 11px; line-height: 1.8; color: rgba(255,255,255,0.35); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 28px 16px 48px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    max-width: 700px;
+    margin: 32px auto 0;
+  }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.6); }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero { padding: 36px 16px 28px; }
+    .quiz-choices { grid-template-columns: 1fr; }
+    .mode-buttons { flex-direction: column; align-items: center; }
+    .stats-inner { gap: 20px; }
+    .stat-num { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">NPB Retired Numbers</div>
+    <h1><span class="gold">永久欠番</span><br>クイズ</h1>
+    <p class="hero-sub">プロ野球の歴史に名を刻んだ伝説の選手たち<br>あなたはその背番号と名前を覚えていますか？</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">永久欠番</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">球団</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">円</div></div>
+  </div>
+</div>
+
+<main>
+
+<!-- ===== MODE SELECT ===== -->
+<div class="screen active" id="screen-mode">
+  <div class="mode-card">
+    <div class="mode-title">出題数を選んでください</div>
+    <div class="mode-buttons">
+      <button class="mode-btn active" onclick="setMode(10)">10問</button>
+      <button class="mode-btn" onclick="setMode(18)">全問</button>
+    </div>
+    <button class="start-btn" onclick="startQuiz()">🏆 クイズスタート！</button>
+  </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="screen" id="screen-quiz">
+  <div class="quiz-progress" id="quiz-progress"></div>
+  <div class="quiz-card">
+    <div class="quiz-team" id="quiz-team"></div>
+    <div class="quiz-number" id="quiz-number"></div>
+    <div class="quiz-hint" id="quiz-hint"></div>
+    <div class="quiz-choices" id="quiz-choices"></div>
+    <div class="quiz-feedback" id="quiz-feedback"></div>
+    <button class="next-btn" id="next-btn" onclick="nextQuestion()">次の問題 →</button>
+  </div>
+</div>
+
+<!-- ===== RESULT ===== -->
+<div class="screen" id="screen-result">
+  <div class="result-card">
+    <div class="result-trophy" id="result-trophy"></div>
+    <div class="result-score" id="result-score"></div>
+    <div class="result-total" id="result-total"></div>
+    <div class="result-msg" id="result-msg"></div>
+    <div class="result-btns">
+      <button class="result-btn primary" onclick="startQuiz()">もう一度挑戦</button>
+      <a class="result-btn secondary" href="https://npb2026q.kkpwebninja.com">背番号クイズへ</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ROSTER TABLE ===== -->
+<div class="roster-section">
+  <div class="roster-title" onclick="var t=document.getElementById('roster-body');var open=t.style.display!=='none';t.style.display=open?'none':'table-row-group';this.querySelector('.ti').textContent=open?'▶':'▼';"><span class="ti">▶</span> プロ野球 永久欠番一覧</div>
+  <table class="roster-table">
+    <thead>
+      <tr><th>No.</th><th>球団</th><th>選手・対象</th><th>制定年</th></tr>
+    </thead>
+    <tbody id="roster-body" style="display:none;">
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== AFFILIATE ===== -->
+<div class="watch-section">
+  <p>伝説の選手を映像で観よう</p>
+  <div class="watch-grid">
+    <a class="watch-card skapa" href="https://px.a8.net/svt/ejp?a8mat=3NEJUR+FN84LE+461Y+6CP0Y" target="_blank" rel="noopener">
+      📺 スカパー! プロ野球セット<span>全12球団の公式戦を完全生中継</span>
+    </a>
+    <a class="watch-card dazn" href="https://www.dmm.com/dazn/" target="_blank" rel="noopener">
+      🎬 DAZN<span>11球団の主催試合をライブ配信</span>
+    </a>
+  </div>
+  <p class="watch-note">※ 本リンクにはアフィリエイト広告が含まれます</p>
+</div>
+
+<!-- ===== SEO TEXT ===== -->
+<div class="seo-section">
+  <h2>プロ野球の永久欠番とは</h2>
+  <p>永久欠番とは、球団に多大な功績を残した選手や関係者の背番号を、以後他の選手が使用しないよう永久に欠番とする制度です。NPB（日本野球機構）では各球団の判断により制定されます。2026年現在、読売ジャイアンツが6つと最多で、王貞治（1番）、長嶋茂雄（3番）、沢村栄治（14番）などが名を連ねます。阪神タイガースでは藤村富美男（10番）、村山実（11番）、吉田義男（23番）の3つ。広島東洋カープでは衣笠祥雄（3番）、山本浩二（8番）、黒田博樹（15番）が制定されています。パ・リーグでは埼玉西武ライオンズの稲尾和久（24番）、東北楽天ゴールデンイーグルスの星野仙一監督（77番）やファンの番号（10番）、北海道日本ハムファイターズの大社義規オーナー（100番）など、選手以外の永久欠番も存在します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://npb2026q.kkpwebninja.com">全球団 背番号クイズ</a>
+    <a href="https://kkpwebninja.com">web忍者の砦</a>
+    <a href="https://privacypolicy.kkpwebninja.com" target="_blank" rel="noopener">プライバシーポリシー</a>
+  </div>
+  <p>&copy; 2026 web忍者の砦</p>
+</footer>
+
+<script>
+// ===== DATA =====
+const RETIRED = [
+  { no: 1,   team: "読売ジャイアンツ",       name: "王貞治",     pos: "一塁手",       year: 1989, episode: "通算868本塁打の世界記録。MVP9回、国民栄誉賞を受賞した「世界の王」。" },
+  { no: 3,   team: "読売ジャイアンツ",       name: "長嶋茂雄",   pos: "三塁手",       year: 1974, episode: "444本塁打、MVP5回。「ミスタープロ野球」として日本の野球人気を牽引。" },
+  { no: 4,   team: "読売ジャイアンツ",       name: "黒沢俊夫",   pos: "外野手",       year: 1947, episode: "NPB史上初の永久欠番。現役中に腸チフスで急逝。チームメイトの追悼により制定。" },
+  { no: 14,  team: "読売ジャイアンツ",       name: "沢村栄治",   pos: "投手",         year: 1947, episode: "プロ野球黎明期の伝説的投手。3度のノーヒットノーラン。戦死。沢村賞の由来。" },
+  { no: 16,  team: "読売ジャイアンツ",       name: "川上哲治",   pos: "一塁手",       year: 1965, episode: "「打撃の神様」。監督としてV9（9年連続日本一）を達成。" },
+  { no: 34,  team: "読売ジャイアンツ",       name: "金田正一",   pos: "投手",         year: 1970, episode: "通算400勝はNPB唯一の記録。国鉄で大半を過ごし、巨人移籍後に制定。" },
+  { no: 10,  team: "阪神タイガース",         name: "藤村富美男", pos: "内野手",       year: 1958, episode: "初代ミスタータイガース。「物干し竿」と呼ばれた長いバットで豪快に打った。" },
+  { no: 11,  team: "阪神タイガース",         name: "村山実",     pos: "投手",         year: 1972, episode: "ザトペック投法で222勝。防御率2.09。沢村賞3回。" },
+  { no: 23,  team: "阪神タイガース",         name: "吉田義男",   pos: "遊撃手",       year: 1987, episode: "「牛若丸」と呼ばれた守備の名手。監督として1985年に阪神を日本一に導く。" },
+  { no: 10,  team: "中日ドラゴンズ",         name: "服部受弘",   pos: "投手/内野手",  year: 1960, episode: "投打の二刀流。通算112勝を挙げ、戦後の中日を支えたレジェンド。" },
+  { no: 15,  team: "中日ドラゴンズ",         name: "西沢道夫",   pos: "一塁手",       year: 1959, episode: "「ミスタードラゴンズ」。212本塁打、首位打者2回。" },
+  { no: 3,   team: "広島東洋カープ",         name: "衣笠祥雄",   pos: "一塁手",       year: 1987, episode: "「鉄人」。連続試合出場2215試合の当時世界記録。504本塁打。国民栄誉賞。" },
+  { no: 8,   team: "広島東洋カープ",         name: "山本浩二",   pos: "外野手",       year: 1986, episode: "「ミスター赤ヘル」。536本塁打、MVP3回。カープの黄金時代を築いた。" },
+  { no: 15,  team: "広島東洋カープ",         name: "黒田博樹",   pos: "投手",         year: 2016, episode: "MLB（ドジャース、ヤンキース）で活躍後、カープに復帰した「男気」。通算203勝。" },
+  { no: 24,  team: "埼玉西武ライオンズ",     name: "稲尾和久",   pos: "投手",         year: 2012, episode: "「神様、仏様、稲尾様」。1958年日本シリーズで一人4勝の伝説。通算276勝。" },
+  { no: 10,  team: "東北楽天ゴールデンイーグルス", name: "ファンの番号", pos: "—",    year: 2004, episode: "球団創設時に制定。スタメン9人＋ファンが「10人目の選手」。NPB初のファン永久欠番。" },
+  { no: 77,  team: "東北楽天ゴールデンイーグルス", name: "星野仙一", pos: "監督",     year: 2018, episode: "2013年に楽天を球団初の日本一に導く。2018年急逝。闘将として愛された。" },
+  { no: 100, team: "北海道日本ハムファイターズ",   name: "大社義規", pos: "初代オーナー", year: 2009, episode: "NPB史上唯一のオーナーの永久欠番。日本ハム創業者。野球殿堂入り。" },
+];
+
+// ===== QUIZ LOGIC =====
+let mode = 10;
+let questions = [];
+let currentQ = 0;
+let score = 0;
+
+function setMode(n) {
+  mode = n;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function startQuiz() {
+  questions = shuffle([...RETIRED]).slice(0, mode);
+  currentQ = 0;
+  score = 0;
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('quiz-progress').textContent = `第 ${currentQ + 1} 問 / ${questions.length} 問`;
+  document.getElementById('quiz-team').textContent = q.team;
+  document.getElementById('quiz-number').textContent = `#${q.no}`;
+  document.getElementById('quiz-hint').textContent = q.pos !== '—' ? `ポジション: ${q.pos}` : '';
+
+  // Generate 4 choices
+  const wrong = shuffle(RETIRED.filter(r => r.name !== q.name)).slice(0, 3);
+  const choices = shuffle([q, ...wrong]);
+
+  const choicesEl = document.getElementById('quiz-choices');
+  choicesEl.innerHTML = choices.map(c =>
+    `<button class="choice-btn" onclick="answer(this,'${c.name}','${q.name}')">${c.name}</button>`
+  ).join('');
+
+  document.getElementById('quiz-feedback').className = 'quiz-feedback';
+  document.getElementById('quiz-feedback').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+}
+
+function answer(btn, selected, correct) {
+  document.querySelectorAll('.choice-btn').forEach(b => {
+    b.disabled = true;
+    if (b.textContent === correct) b.classList.add('correct');
+  });
+
+  const fb = document.getElementById('quiz-feedback');
+  const q = questions[currentQ];
+
+  if (selected === correct) {
+    score++;
+    fb.className = 'quiz-feedback correct-fb show';
+    fb.innerHTML = `<strong>⭕ 正解！</strong><br>${q.episode}`;
+  } else {
+    btn.classList.add('wrong');
+    fb.className = 'quiz-feedback wrong-fb show';
+    fb.innerHTML = `<strong>❌ 不正解…</strong> 正解は <strong>${correct}</strong><br>${q.episode}`;
+  }
+
+  document.getElementById('next-btn').style.display = 'block';
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= questions.length) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showResult() {
+  showScreen('result');
+  const pct = Math.round((score / questions.length) * 100);
+  document.getElementById('result-score').textContent = `${score} / ${questions.length}`;
+  document.getElementById('result-total').textContent = `正答率 ${pct}%`;
+
+  let trophy, msg;
+  if (pct === 100) { trophy = '🏆'; msg = 'パーフェクト！あなたはプロ野球の歴史を完璧に知っています！'; }
+  else if (pct >= 80) { trophy = '🥇'; msg = '素晴らしい！永久欠番の知識は本物です。'; }
+  else if (pct >= 60) { trophy = '🥈'; msg = 'なかなかの実力！もう少しで上級者です。'; }
+  else if (pct >= 40) { trophy = '🥉'; msg = 'もう一息！下の一覧で復習してみましょう。'; }
+  else { trophy = '⚾'; msg = 'まだまだこれから！永久欠番の一覧を見て覚えましょう。'; }
+
+  document.getElementById('result-trophy').textContent = trophy;
+  document.getElementById('result-msg').textContent = msg;
+}
+
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(`screen-${name}`).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ===== ROSTER TABLE =====
+(function() {
+  const tbody = document.getElementById('roster-body');
+  RETIRED.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="num">${r.no}</td>
+      <td class="team">${r.team}</td>
+      <td><strong>${r.name}</strong><div class="episode">${r.episode}</div></td>
+      <td>${r.year}年</td>
+    `;
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+</body>
+</html>
