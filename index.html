@@ -631,7 +631,7 @@ function startQuiz() {
 function renderQuestion() {
   const q = questions[currentQ];
   document.getElementById('quiz-progress').textContent = `第 ${currentQ + 1} 問 / ${questions.length} 問`;
-  document.getElementById('quiz-team').textContent = q.team;
+  document.getElementById('quiz-team').textContent = '';
   document.getElementById('quiz-number').textContent = `#${q.no}`;
   document.getElementById('quiz-hint').textContent = q.pos !== '—' ? `ポジション: ${q.pos}` : '';
 
@@ -661,11 +661,11 @@ function answer(btn, selected, correct) {
   if (selected === correct) {
     score++;
     fb.className = 'quiz-feedback correct-fb show';
-    fb.innerHTML = `<strong>⭕ 正解！</strong><br>${q.episode}`;
+    fb.innerHTML = `<strong>⭕ 正解！</strong><br>${q.team}｜${q.episode}`;
   } else {
     btn.classList.add('wrong');
     fb.className = 'quiz-feedback wrong-fb show';
-    fb.innerHTML = `<strong>❌ 不正解…</strong> 正解は <strong>${correct}</strong><br>${q.episode}`;
+    fb.innerHTML = `<strong>❌ 不正解…</strong> 正解は <strong>${correct}</strong><br>${q.team}｜${q.episode}`;
   }
 
   document.getElementById('next-btn').style.display = 'block';
