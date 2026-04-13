@@ -631,7 +631,7 @@ function startQuiz() {
 function renderQuestion() {
   const q = questions[currentQ];
   document.getElementById('quiz-progress').textContent = `第 ${currentQ + 1} 問 / ${questions.length} 問`;
-  document.getElementById('quiz-team').textContent = '';
+  document.getElementById('quiz-team').textContent = q.team;
   document.getElementById('quiz-number').textContent = `#${q.no}`;
   document.getElementById('quiz-hint').textContent = q.pos !== '—' ? `ポジション: ${q.pos}` : '';
 
