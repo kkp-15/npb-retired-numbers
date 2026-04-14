@@ -239,13 +239,13 @@ gtag('config', 'G-2LM85GJN0L');
     margin-bottom: 6px;
   }
   .quiz-number {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(56px, 15vw, 80px);
-    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(24px, 7vw, 36px);
+    font-weight: 900;
     color: #FFD700;
     text-shadow: 0 4px 20px rgba(218,165,32,0.3);
     margin: 8px 0 6px;
-    line-height: 1;
+    line-height: 1.2;
   }
   .quiz-hint {
     font-size: 12px;
@@ -632,16 +632,18 @@ function renderQuestion() {
   const q = questions[currentQ];
   document.getElementById('quiz-progress').textContent = `第 ${currentQ + 1} 問 / ${questions.length} 問`;
   document.getElementById('quiz-team').textContent = q.team;
-  document.getElementById('quiz-number').textContent = `#${q.no}`;
+  document.getElementById('quiz-number').textContent = q.name;
   document.getElementById('quiz-hint').textContent = q.pos !== '—' ? `ポジション: ${q.pos}` : '';
 
-  // Generate 4 choices
-  const wrong = shuffle(RETIRED.filter(r => r.name !== q.name)).slice(0, 3);
-  const choices = shuffle([q, ...wrong]);
+  // Generate 4 number choices (unique numbers)
+  const allNums = [...new Set(RETIRED.map(r => r.no))];
+  const wrongNums = shuffle(allNums.filter(n => n !== q.no)).slice(0, 3);
+  const choices = shuffle([q.no, ...wrongNums]);
 
+  const correctNo = String(q.no);
   const choicesEl = document.getElementById('quiz-choices');
-  choicesEl.innerHTML = choices.map(c =>
-    `<button class="choice-btn" onclick="answer(this,'${c.name}','${q.name}')">${c.name}</button>`
+  choicesEl.innerHTML = choices.map(n =>
+    `<button class="choice-btn" onclick="answer(this,'${n}','${correctNo}')" style="font-family:'Oswald',sans-serif; font-size:22px; letter-spacing:2px;">#${n}</button>`
   ).join('');
 
   document.getElementById('quiz-feedback').className = 'quiz-feedback';
@@ -652,7 +654,7 @@ function renderQuestion() {
 function answer(btn, selected, correct) {
   document.querySelectorAll('.choice-btn').forEach(b => {
     b.disabled = true;
-    if (b.textContent === correct) b.classList.add('correct');
+    if (b.textContent === `#${correct}`) b.classList.add('correct');
   });
 
   const fb = document.getElementById('quiz-feedback');
@@ -661,11 +663,11 @@ function answer(btn, selected, correct) {
   if (selected === correct) {
     score++;
     fb.className = 'quiz-feedback correct-fb show';
-    fb.innerHTML = `<strong>⭕ 正解！</strong><br>${q.team}｜${q.episode}`;
+    fb.innerHTML = `<strong>⭕ 正解！ #${q.no}</strong><br>${q.episode}`;
   } else {
     btn.classList.add('wrong');
     fb.className = 'quiz-feedback wrong-fb show';
-    fb.innerHTML = `<strong>❌ 不正解…</strong> 正解は <strong>${correct}</strong><br>${q.team}｜${q.episode}`;
+    fb.innerHTML = `<strong>❌ 不正解…</strong> 正解は <strong>#${q.no}</strong><br>${q.episode}`;
   }
 
   document.getElementById('next-btn').style.display = 'block';
